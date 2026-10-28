@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Mi Niña Linda ❤️</title>
+
+<style>
+:root {
+    --rosa: #ff6b91;
+    --rosa-claro: #ffe4ed;
+    --rojo: #c9184a;
+    --fondo: #fff7fa;
+    --texto: #713449;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.portada {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    background:
+        radial-gradient(circle at top left, #ffc4d6, transparent 45%),
+        linear-gradient(135deg, #fff5f8, #ffdce8);
+    position: relative;
+    overflow: hidden;
+}
+
+.contenido {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    animation: aparecer 1.5s ease;
+}
+
+.corazon-principal {
+    font-size: 75px;
+    animation: latido 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 5px 20px #d94e7d18;
+}
+
+h1 {
+    color: var(--rojo);
+    font-size: clamp(2.7rem, 8vw, 5rem);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+h2 {
+    color: var(--rojo);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.texto-portada {
+    font-size: 1.1rem;
+    margin: 0 auto 30px;
+    max-width: 580px;
+}
+
+.boton {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    background: var(--rosa);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 7px 20px #e76c9733;
+    transition: transform .3s, background .3s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    background: var(--rojo);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffffed;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 15px #9d4b6810;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 9px 12px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background: var(--rosa-claro);
+}
+
+.seccion {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenedor {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.introduccion {
+    max-width: 750px;
+    margin: auto;
+    font-size: 1.05rem;
+}
+
+.rosa {
+    background: linear-gradient(135deg, #ffe4ed, #fff5f8);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 30px 23px;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px #b54c7110;
+    transition: transform .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+}
+
+.icono {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: var(--rojo);
+    margin-bottom: 12px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.foto {
+    background: white;
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #8d405318;
+    transition: transform .3s;
+}
+
+.foto:hover {
+    transform: translateY(-5px);
+}
+
+.foto img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    cursor: pointer;
+}
+
+.foto p {
+    padding: 12px 5px 5px;
+    font-weight: bold;
+}
+
+.nota {
+    margin-top: 22px;
+    font-size: .9rem;
+}
+
+.carta {
+    max-width: 760px;
+    margin: 30px auto 0;
+    padding: 35px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #9c416a12;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+.carta p {
+    margin-bottom: 18px;
+}
+
+.firma {
+    color: var(--rojo);
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.caja-frase {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #a9476a13;
+}
+
+#frase {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo);
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    margin-bottom: 20px;
+    transition: opacity .3s;
+}
+
+.contador {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.numero {
+    min-width: 115px;
+    padding: 22px 15px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #a9476a12;
+}
+
+.numero strong {
+    display: block;
+    color: var(--rojo);
+    font-size: 2.1rem;
+}
+
+.numero span {
+    font-size: .9rem;
+}
+
+.sorpresa {
+    max-width: 680px;
+    margin: 30px auto 0;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #a9476a12;
+}
+
+#mensaje-secreto {
+    display: none;
+    margin-top: 25px;
+    animation: aparecer .8s ease;
+}
+
+.corazon-flotante {
+    position: fixed;
+    bottom: -50px;
+    z-index: 100;
+    pointer-events: none;
+    animation: subir 4s linear forwards;
+}
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #ffdce8;
+}
+
+footer p {
+    margin: 5px;
+}
+
+#visor {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #210d17ed;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#visor img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+#cerrar-visor {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.13); }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subir {
+    0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-110vh) rotate(35deg); }
+}
+
+@media(max-width: 600px) {
+    .seccion {
+        padding: 60px 16px;
+    }
+
+    .carta {
+        padding: 25px 20px;
+    }
+
+    nav {
+        gap: 2px;
+        padding: 8px 3px;
+    }
+
+    nav a {
+        font-size: .78rem;
+        padding: 8px;
+    }
+
+    .foto img {
+        height: 270px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<header class="portada" id="inicio">
+    <div class="contenido">
+        <div class="corazon-principal">❤️</div>
+
+        <div class="etiqueta">
+            Una sorpresa hecha especialmente para ti 💌
+        </div>
+
+        <h1>Para mi noviecita linda ❤️</h1>
+
+        <p class="texto-portada">
+            Si pudiera guardar todas las cosas bonitas que me haces
+            sentir, necesitaría un universo entero
+            Por eso hice este pequeño lugar para ti, para recordarte
+            lo especial que eres para mí y todo lo bonito que todavía
+            quiero vivir contigo 💗
+        </p>
+
+        <button class="boton" onclick="entrar()">
+            Abre tu regalo 💌
+        </button>
+    </div>
+</header>
+
+<!-- MENÚ -->
+<nav>
+    <a href="#inicio">Inicio 🏠</a>
+    <a href="#nosotros">Nosotros 💗</a>
+    <a href="#fotos">Fotografías 📸</a>
+    <a href="#carta">Mi carta 💌</a>
+    <a href="#tiempo">Nuestro tiempo ⏳</a>
+    <a href="#sorpresa">Sorpresa 🎁</a>
+</nav>
+
+<main>
+
+<!-- SOBRE NOSOTROS -->
+<section class="seccion" id="nosotros">
+    <div class="contenedor">
+        <h2>Mayte, sabes qué es lo bonito de ti? 🌷</h2>
+
+        <p class="introduccion">
+            Que no necesito una fecha especial para pensar en ti.
+            A veces basta recordar tu sonrisa, nuestras conversaciones
+            o cualquier pequeño momento para que mi día se vuelva
+            un poquito más bonito
+            <br><br>
+            Desde el 25 de mayo de 2024 hemos tenido tiempo para
+            crear nuestra propia historia. Y esta página es una forma
+            de guardar una pequeña parte de lo que significas para mí
+            <br><br>
+            Quiero que siempre tengas un lugar al que puedas regresar
+            para recordar cuánto cariño hay detrás de cada palabra ❤️
+        </p>
+
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <div class="icono">🌷</div>
+                <h3>Tu sonrisa</h3>
+                <p>
+                    Una de mis cosas favoritas de ti es esa sonrisa
+                    que puede hacer más bonito un día cualquiera
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <div class="icono">💗</div>
+                <h3>Tu forma de ser</h3>
+                <p>
+                    Me gusta que seas tú, con tus ocurrencias,
+                    tus detalles y todas esas pequeñas cosas
+                    que te hacen única
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <div class="icono">🫶</div>
+                <h3>Nuestros recuerdos</h3>
+                <p>
+                    Quiero guardar los momentos bonitos y seguir
+                    creando recuerdos que algún día nos hagan sonreír
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="seccion rosa" id="fotos">
+    <div class="contenedor">
+        <h2>Mi galería favorita eres tú </h2>
+
+        <p class="introduccion">
+            Cuatro pequeños espacios para guardar fotografías
+            de una persona que significa mucho para mí.
+            Toca cualquiera para verla más grande ❤️
+        </p>
+
+        <div class="galeria">
+
+            <div class="foto">
+                <img src="amor.jpeg"
+                     alt="Fotografía de Mayte"
+                     onclick="verFoto(this)"
+                     onerror="this.parentElement.style.display='none'">
+                <p>Mi noviecita linda ❤️</p>
+            </div>
+
+            <div class="foto">
+                <img src="amor1.jpeg"
+                     alt="Un recuerdo especial"
+                     onclick="verFoto(this)"
+                     onerror="this.parentElement.style.display='none'">
+                <p>Un recuerdo especial 🌷</p>
+            </div>
+
+            <div class="foto">
+                <img src="amor3.jpeg"
+                     alt="Una sonrisa bonita"
+                     onclick="verFoto(this)"
+                     onerror="this.parentElement.style.display='none'">
+                <p>Mi sonrisa favorita 💗</p>
+            </div>
+
+            <div class="foto">
+                <img src="amor4.jpeg"
+                     alt="Un momento bonito"
+                     onclick="verFoto(this)"
+                     onerror="this.parentElement.style.display='none'">
+                <p>Un pedacito de nosotros 💌</p>
+            </div>
+
+        </div>
+
+        </p>
+    </div>
+</section>
+
+<!-- CARTA DE AMOR -->
+<section class="seccion" id="carta">
+    <div class="contenedor">
+        <h2>Una carta para ti, Mayte 💌</h2>
+
+        <div class="carta">
+            <p>Mi Mayte bonita: ❤️</p>
+
+            <p>
+                No sé si algún día encontraré las palabras perfectas
+                para explicar todo lo que significas para mí,
+                pero quiero intentar decirte algo bonito
+            </p>
+
+            <p>
+                Desde aquel 25 de mayo de 2024 comenzamos una historia
+                que se ha convertido en una parte especial de mi vida.
+                Desde entonces hemos tenido momentos, conversaciones
+                y recuerdos que forman parte de lo que somos
+            </p>
+
+            <p>
+                Quiero que sepas que me gusta tu forma de ser,
+                tu sonrisa y esos pequeños detalles que te hacen
+                diferente a cualquier otra persona
+            </p>
+
+            <p>
+                No necesito que todo sea perfecto para valorar
+                lo que tenemos. Para mí también importan las cosas
+                sencillas: hablar contigo, reírnos juntos, escucharnos
+                y saber que podemos compartir lo que sentimos
+            </p>
+
+            <p>
+                Si pudiera pedir algo para nuestra historia,
+                sería que nos queden muchísimos recuerdos bonitos
+                por crear, lugares por conocer y motivos para sonreír
+            </p>
+
+            <p>
+                Hice esta página porque quería regalarte algo diferente,
+                algo que pudieras abrir cuando quisieras y que te
+                recordara lo especial que eres para mí
+            </p>
+
+            <p>
+                Gracias por formar parte de mi historia, Mayte
+                Ojalá cada vez que veas estas palabras puedas
+                sentir un poquito del cariño con el que las escribí
+            </p>
+
+            <p>
+                Te quiero muchísimo. ❤️
+            </p>
+
+            <p class="firma">
+                Con todo mi cariño,<br>
+                Tu niño bonito 💗
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FRASES INTERACTIVAS -->
+<section class="seccion rosa" id="frases">
+    <div class="contenedor">
+        <h2>Un mensajito para ti 💕</h2>
+
+        <p>
+            Cada botón guarda una frase bonita
+            Presiona para descubrir una nueva
+        </p>
+
+        <div class="caja-frase">
+            <div id="frase" aria-live="polite">
+                Mayte, si pudiera elegir un lugar bonito,
+                elegiría cualquier lugar donde pudiera compartir
+                un momento contigo ❤️
+            </div>
+
+            <button class="boton" onclick="nuevaFrase()">
+                Otra frase 💌
+            </button>
+
+            <button class="boton" onclick="soltarCorazones()">
+                Lluvia de corazones 💖
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CONTADOR DESDE EL 25 DE MAYO DE 2024 -->
+<section class="seccion" id="tiempo">
+    <div class="contenedor">
+        <h2>Nuestra historia comenzó... ❤️</h2>
+
+        <p class="introduccion">
+            El 25 de mayo de 2024 comenzó una parte muy bonita
+            de nuestra historia, Aquí puedes ver cuánto tiempo
+            ha pasado desde aquel día
+        </p>
+
+        <div class="contador">
+            <div class="numero">
+                <strong id="dias">0</strong>
+                <span>Días</span>
+            </div>
+
+            <div class="numero">
+                <strong id="horas">0</strong>
+                <span>Horas</span>
+            </div>
+
+            <div class="numero">
+                <strong id="minutos">0</strong>
+                <span>Minutos</span>
+            </div>
+
+            <div class="numero">
+                <strong id="segundos">0</strong>
+                <span>Segundos</span>
+            </div>
+        </div>
+
+        <p>
+            Desde el 25 de mayo de 2024 hasta el día de hoy,
+            cada segundo forma parte de nuestra historia. 
+        </p>
+
+    </div>
+</section>
+
+<!-- SORPRESA SECRETA -->
+<section class="seccion rosa" id="sorpresa">
+    <div class="contenedor">
+        <h2>Mayte, todavía hay algo más... 🎁</h2>
+
+        <p>
+            Preparé una última sorpresita.
+            Presiona el botón para descubrirla. 💗
+        </p>
+
+        <div class="sorpresa">
+            <div style="font-size:70px;margin-bottom:20px">
+                🎁
+            </div>
+
+            <button class="boton" onclick="abrirSorpresa()">
+                Descubrir mi sorpresa ❤️
+            </button>
+
+            <div id="mensaje-secreto">
+                <h2>Para ti, Mayte 💌</h2>
+
+                <p>
+                    Si llegaste hasta aquí, quiero que recuerdes
+                    que eres una persona muy especial para mí.
+                </p>
+
+                <p style="margin-top:15px">
+                    Gracias por cada sonrisa, cada conversación
+                    y cada momento bonito que forma parte de
+                    nuestra historia.
+                </p>
+
+                <p style="margin-top:15px">
+                    No sé qué nos tenga preparado el futuro,
+                    pero me gustaría que sigamos creando recuerdos,
+                    aprendiendo juntos y encontrando razones para
+                    sonreír.
+                </p>
+
+                <p style="font-size:35px;margin-top:20px">
+                    💗 
+                </p>
+
+                <p style="font-weight:bold;margin-top:15px">
+                    Te quiero muchísimo, Mayte. ❤️
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>Hecho especialmente para mi noviecita linda ❤️</p>
+    <p>Una pequeña página para una persona muy especial 💗</p>
+    <p id="anio"></p>
+</footer>
+
+<!-- VISOR PARA AMPLIAR FOTOS -->
+<div id="visor" onclick="cerrarFoto()">
+    <button id="cerrar-visor"
+            aria-label="Cerrar fotografía"
+            onclick="cerrarFoto()">×</button>
+
+    <img id="foto-ampliada" src="" alt="Fotografía ampliada">
+</div>
+
+<script>
+
+// FECHA DE INICIO DE LA RELACIÓN: 25 DE MAYO DE 2024
+// En JavaScript, enero = 0, febrero = 1, mayo = 4.
+const fechaEspecial = new Date(2024, 4, 25);
+
+function entrar() {
+    document.getElementById("nosotros").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    soltarCorazones();
+}
+
+// FRASES ROMÁNTICAS INTERACTIVAS
+const frases = [
+    "Mayte, tu sonrisa es uno de mis lugares favoritos. ❤️",
+    "Conocerte fue una de esas casualidades bonitas que agradezco.",
+    "No necesito un día perfecto si puedo compartir un ratito contigo. 💗",
+    "Me gusta tu forma de ser y todos esos pequeños detalles que te hacen única.",
+    "Ojalá nunca nos falten motivos para sonreír juntos. 🌷",
+    "Si los recuerdos fueran estrellas, llenaría el cielo con nuestros momentos.",
+    "Mi parte favorita de muchos días es poder hablar contigo. 💌",
+    "Quiero seguir conociéndote y descubrir todo lo bonito que hay en ti.",
+    "Hay personas que hacen especiales los momentos. Para mí, tú eres una de ellas.",
+    "Desde el 25 de mayo de 2024 guardo recuerdos que forman parte de mi historia contigo. ❤️",
+    "Si pudiera regalarte algo, sería la oportunidad de verte con mis ojos y que entendieras lo especial que eres para mí.",
+    "Gracias por ser parte de mi vida, Mayte. 💕",
+    "Eres esa persona en la que pienso cuando recuerdo algo bonito.",
+    "Ojalá tengamos muchísimas fotografías más que guardar en esta página. 📸",
+    "No existe una página lo suficientemente grande para todos los recuerdos que me gustaría crear contigo."
+];
+
+let ultimaFrase = -1;
+
+function nuevaFrase() {
+    let indice;
+
+    do {
+        indice = Math.floor(Math.random() * frases.length);
+    } while (indice === ultimaFrase && frases.length > 1);
+
+    ultimaFrase = indice;
+
+    const elemento = document.getElementById("frase");
+    elemento.style.opacity = 0;
+
+    setTimeout(() => {
+        elemento.textContent = frases[indice];
+        elemento.style.opacity = 1;
+    }, 250);
+}
+
+// CONTADOR AUTOMÁTICO
+function actualizarContador() {
+    const ahora = new Date();
+
+    if (ahora < fechaEspecial) {
+        ["dias", "horas", "minutos", "segundos"].forEach(id => {
+            document.getElementById(id).textContent = "0";
+        });
+        return;
+    }
+
+    let diferencia = Math.floor(
+        (ahora.getTime() - fechaEspecial.getTime()) / 1000
+    );
+
+    const dias = Math.floor(diferencia / 86400);
+    diferencia %= 86400;
+
+    const horas = Math.floor(diferencia / 3600);
+    diferencia %= 3600;
+
+    const minutos = Math.floor(diferencia / 60);
+    const segundos = diferencia % 60;
+
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent = horas;
+    document.getElementById("minutos").textContent = minutos;
+    document.getElementById("segundos").textContent = segundos;
+}
+
+actualizarContador();
+setInterval(actualizarContador, 1000);
+
+// LLUVIA DE CORAZONES
+function soltarCorazones() {
+    const simbolos = ["❤️", "💗", "💕", "💖", "💘", "🌸"];
+
+    for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+            const corazon = document.createElement("div");
+
+            corazon.className = "corazon-flotante";
+            corazon.textContent =
+                simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.fontSize = (18 + Math.random() * 25) + "px";
+            corazon.style.animationDuration = (2.5 + Math.random() * 2) + "s";
+
+            document.body.appendChild(corazon);
+
+            setTimeout(() => corazon.remove(), 5000);
+        }, i * 100);
+    }
+}
+
+// SORPRESA SECRETA
+function abrirSorpresa() {
+    const mensaje = document.getElementById("mensaje-secreto");
+
+    mensaje.style.display = "block";
+    soltarCorazones();
+
+    mensaje.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+// AMPLIAR FOTOGRAFÍAS
+function verFoto(imagen) {
+    document.getElementById("foto-ampliada").src = imagen.src;
+    document.getElementById("visor").style.display = "flex";
+}
+
+function cerrarFoto() {
+    document.getElementById("visor").style.display = "none";
+    document.getElementById("foto-ampliada").src = "";
+}
+
+// CERRAR FOTOGRAFÍA CON ESCAPE
+document.addEventListener("keydown", function(evento) {
+    if (evento.key === "Escape") {
+        cerrarFoto();
+    }
+});
+
+// AÑO ACTUAL
+document.getElementById("anio").textContent =
+    "© " + new Date().getFullYear() + " | Hecho con ❤️";
+
+</script>
+
+</body>
+</html>
+```
